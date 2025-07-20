@@ -381,7 +381,7 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
     singularName: 'client';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -413,7 +413,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     singularName: 'location';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     address: Schema.Attribute.Text;
@@ -448,7 +448,7 @@ export interface ApiReferenceReference extends Struct.CollectionTypeSchema {
     singularName: 'reference';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -482,7 +482,7 @@ export interface ApiShootingShooting extends Struct.CollectionTypeSchema {
     singularName: 'shooting';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     client: Schema.Attribute.Relation<'oneToOne', 'api::client.client'>;

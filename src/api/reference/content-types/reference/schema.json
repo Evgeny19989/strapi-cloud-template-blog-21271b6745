@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "references",
+  "info": {
+    "singularName": "reference",
+    "pluralName": "references",
+    "displayName": "Reference"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tags": {
+      "type": "json"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "shootings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shooting.shooting",
+      "mappedBy": "reference"
+    }
+  }
+}

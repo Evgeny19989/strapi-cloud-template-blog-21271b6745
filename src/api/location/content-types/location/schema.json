@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text",
+      "required": true
+    },
+    "address": {
+      "type": "text"
+    },
+    "contacts": {
+      "type": "text"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "shootings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shooting.shooting",
+      "mappedBy": "location"
+    }
+  }
+}

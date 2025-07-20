@@ -37,6 +37,12 @@
       "relation": "manyToOne",
       "target": "api::reference.reference",
       "inversedBy": "shootings"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "shootings"
     }
   }
 }

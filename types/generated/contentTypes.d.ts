@@ -507,6 +507,10 @@ export interface ApiShootingShooting extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -965,7 +969,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -997,6 +1000,7 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    shootings: Schema.Attribute.Relation<'oneToMany', 'api::shooting.shooting'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
